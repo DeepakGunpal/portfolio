@@ -1,36 +1,45 @@
+"use client"
 import Link from 'next/link';
 
+import { motion } from "framer-motion";
+import { useState } from "react";
+
+let tabs = [
+    { id: "", label: "Home" },
+    { id: "skills", label: "Skills" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
+];
+
 const Navar = () => {
+    let [activeTab, setActiveTab] = useState(tabs[0].id);
+
     return (
-        <nav className="fixed top-5 left-1/4 w-1/2 bg-white bg-opacity-50 backdrop-blur-md p-4 rounded-full">
-            <div className="container mx-auto">
-                <ul className="flex justify-center space-x-6">
-                    <li>
-                        <Link href="#" className="text-gray-800 hover:text-blue-500" >
-                            Home
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="#skills" className="text-gray-800 hover:text-blue-500">
-                            Skills
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="#projects" className="text-gray-800 hover:text-blue-500">
-                            Projects
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="#experience" className="text-gray-800 hover:text-blue-500">
-                            Experience
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="#contact" className="text-gray-800 hover:text-blue-500">
-                            Contact
-                        </Link>
-                    </li>
-                </ul>
+        <nav className="fixed top-5 left-1/4 w-1/2 bg-white bg-opacity-50 backdrop-blur-md p-4 rounded-full z-50">
+            <div className="container mx-auto flex space-x-1 justify-center">
+                {tabs.map((tab) => (
+                    <Link
+                        href={`#${tab.id}`}
+                        key={tab.id}
+                        onClick={() => setActiveTab(tab.id)}
+                        className={`${activeTab === tab.id ? "" : "hover:text-sky-600"
+                            } relative rounded-full px-3 py-1.5 text-sm font-medium text-black outline-sky-400 transition focus-visible:outline-2`}
+                        style={{
+                            WebkitTapHighlightColor: "transparent",
+                        }}
+                    >
+                        {activeTab === tab.id && (
+                            <motion.span
+                                layoutId="bubble"
+                                className="absolute inset-0 z-10 bg-white mix-blend-difference"
+                                style={{ borderRadius: 9999 }}
+                                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                            />
+                        )}
+                        {tab.label}
+                    </Link>
+                ))}
             </div>
         </nav>
     );

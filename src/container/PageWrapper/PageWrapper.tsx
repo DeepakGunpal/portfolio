@@ -6,10 +6,10 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
     return (
         <AnimatePresence>
             <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 15 }}
-                transition={{ delay: 0.5 }}
+                initial={{ opacity: 0, x: 50 }} // Slide in from the right
+                animate={{ opacity: 1, x: 0 }} // Animation when entering
+                exit={{ opacity: 0, x: -50 }} // Slide out to the left
+                transition={{ delay: 1 }}
             >
                 {children}
             </motion.div>

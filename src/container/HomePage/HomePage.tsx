@@ -1,5 +1,5 @@
 import HomePageModel from '@/components/HomePageModel/HomePageModel'
-import avatar from "@/assets/2.jpg"
+import avatar from "@/assets/3.jpg"
 import Image from 'next/image'
 
 export default function HomePage() {

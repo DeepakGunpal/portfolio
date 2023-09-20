@@ -1,10 +1,22 @@
 "use client"
-import Spline from '@splinetool/react-spline';
+import { Suspense, lazy, useState } from 'react';
+import Hi from '../LottieAnimation/Hi';
+const Spline = lazy(() => import('@splinetool/react-spline'));
+
 
 export default function HomePageModel() {
+  const [splineLoaded, setSplineLoaded] = useState(false)
   return (
-    <div className='bg-gradient-to-br from-pink-300 via-transparent to-blue-300 p-1 rounded-lg'>
-      <Spline scene="https://prod.spline.design/wOjqLpdVLYOu5GFX/scene.splinecode" style={{ width: "700px", height: "500px" }} className='bg-gradient-to-br from-pink-300 via-transparent to-blue-300' />
+    <div
+      className='p-1 rounded-lg flex justify-center items-center'
+      style={{ width: "500px", height: "550px" }}>
+      <Suspense>
+        <Spline scene="https://prod.spline.design/wOjqLpdVLYOu5GFX/scene.splinecode"
+          onLoad={() => setSplineLoaded(true)}
+          style={{ display: splineLoaded ? "block" : "none" }}
+        />
+      </Suspense>
+      {!splineLoaded && <Hi />}
     </div>
   );
 }
