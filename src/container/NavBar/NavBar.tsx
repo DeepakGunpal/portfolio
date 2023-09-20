@@ -1,15 +1,14 @@
 "use client"
 import Link from 'next/link';
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 
 let tabs = [
-    { id: "", label: "Home" },
-    { id: "skills", label: "Skills" },
-    { id: "experience", label: "Experience" },
-    { id: "projects", label: "Projects" },
-    { id: "contact", label: "Contact" },
+    { id: "/", label: "Home" },
+    { id: "#skills", label: "Skills" },
+    { id: "#experience", label: "Experience" },
+    { id: "#projects", label: "Projects" },
+    { id: "#contact", label: "Contact" },
 ];
 
 const Navar = () => {
@@ -20,7 +19,7 @@ const Navar = () => {
             <div className="container mx-auto flex space-x-1 justify-center">
                 {tabs.map((tab) => (
                     <Link
-                        href={`#${tab.id}`}
+                        href={`${tab.id}`}
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
                         className={`${activeTab === tab.id ? "" : "hover:text-sky-600"

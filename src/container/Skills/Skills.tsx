@@ -8,7 +8,7 @@ import Image from "next/image";
 import PageWrapper from "../PageWrapper/PageWrapper";
 
 const grid = [
-    ["TypeScript", "Reactjs", "Prompt Engg.", "JavaScript"],
+    ["TypeScript", "Nextjs 13", "Prompt Engg.", "JavaScript"],
     ["MongoDb", "Express", "React", "Node"],
     ["Redux", "Recoil", "Chrome Ext. V3", "Web Scrapping"],
     ["HTML", "CSS", "Bootstrap", "Tailwind"],
@@ -38,7 +38,7 @@ const Skills = () => {
         <>
             <PageWrapper>
                 <div className="flex sm:flex-row flex-col-reverse min-h-screen items-center justify-around p-2" id="skills">
-                    <Image src={avatar} alt='ai-avatar' width={300} height={425} className='rounded-full' />
+                    <Image src={avatar} alt='ai-avatar' width={300} height={425} className='rounded-full hidden sm:none md:none lg:block' />
                     <motion.div
                         animate={{ "--base-hue": 360 } as any}
                         initial={{ "--base-hue": 0 } as any}

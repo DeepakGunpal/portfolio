@@ -6,7 +6,6 @@ const Spline = lazy(() => import('@splinetool/react-spline'));
 
 export default function HomePageModel() {
   const [splineLoaded, setSplineLoaded] = useState(false)
-  console.log("🚀 ~ file: HomePageModel.tsx:9 ~ HomePageModel ~ splineLoaded:", splineLoaded)
   return (
     <div
       className='p-1 rounded-lg flex justify-center items-center'
