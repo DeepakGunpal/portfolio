@@ -14,7 +14,7 @@ export default function HomePage() {
     })
     return (
         <div className="flex flex-col min-h-screen w-full items-center justify-center p-2 pt-40">
-            <h1 className='text-2xl w-30'>I'm a {text}</h1>
+            <h1 className='text-2xl w-30'>I&apos;m a {text}</h1>
             <div className='flex flex-col sm:flex-row w-full items-center justify-around'>
                 <HomePageModel />
                 <Image
