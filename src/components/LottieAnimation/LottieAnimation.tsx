@@ -8,7 +8,6 @@ type props = {
 }
 
 const LottieAnimation = ({ animation, height = "300px", width = "300px" }: props) => {
-    console.log("🚀 ~ file: LottieAnimation.tsx:9 ~ LottieAnimation ~ animation:", animation)
     return (
         <Player
             autoplay
