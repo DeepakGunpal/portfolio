@@ -1,6 +1,7 @@
 "use client"
 import { Suspense, lazy, useState } from 'react';
-import Hi from '../LottieAnimation/Hi';
+import Hi from "@/assets/LottieJSON/hi.json"
+import LottieAnimation from '../LottieAnimation/LottieAnimation';
 const Spline = lazy(() => import('@splinetool/react-spline'));
 
 
@@ -12,14 +13,11 @@ export default function HomePageModel() {
       style={{ width: "500px", height: "550px" }}>
       <Suspense>
         <Spline scene="https://prod.spline.design/wOjqLpdVLYOu5GFX/scene.splinecode"
-          onLoad={() => {
-            console.log("Loaded spline model")
-            setSplineLoaded(true)
-          }}
+          onLoad={() => setSplineLoaded(true)}
           style={{ display: splineLoaded ? "block" : "none" }}
         />
       </Suspense>
-      {!splineLoaded && <Hi />}
+      {!splineLoaded && <LottieAnimation animation={Hi} />}
     </div>
   );
 }

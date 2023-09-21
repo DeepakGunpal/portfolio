@@ -10,11 +10,14 @@ export default function HomePage() {
     const [text] = useTypewriter({
         words: skills,
         loop: true,
-        delaySpeed: 2000
+        delaySpeed: 1000
     })
     return (
         <div className="flex flex-col min-h-screen w-full items-center justify-center p-2 pt-40">
-            <h1 className='text-2xl w-30'>I&apos;m a {text}</h1>
+            <div className='w-2/6 h-12 flex flex-row gap-2 p-2 rounded-2xl bg-gradient-to-br from-pink-300 via-purple-400 to-blue-300 px-12'>
+                <h1 className='text-2xl font-bold text-transparent bg-clip-text bg-black'>Hello I'm </h1>
+                <h1 className='text-2xl font-bold text-transparent bg-clip-text bg-black'> {text}</h1>
+            </div>
             <div className='flex flex-col sm:flex-row w-full items-center justify-around'>
                 <HomePageModel />
                 <Image

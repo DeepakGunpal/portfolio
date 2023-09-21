@@ -5,7 +5,7 @@ import { motion, useMotionValue } from "framer-motion";
 import SkillsGrid from "@/components/SkillsGrid/SkillsGrid";
 import avatar from "@/assets/2.jpg"
 import Image from "next/image";
-import PageWrapper from "../PageWrapper/PageWrapper";
+import PageWrapper from "../../components/PageWrapper/PageWrapper";
 
 const grid = [
     ["TypeScript", "Nextjs 13", "Prompt Engg.", "JavaScript"],
