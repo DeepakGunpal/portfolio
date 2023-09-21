@@ -13,7 +13,7 @@ const grid = [
     ["Redux", "Recoil", "Chrome Ext. V3", "Web Scrapping"],
     ["HTML", "CSS", "Bootstrap", "Tailwind"],
 ];
-const size = 120;
+const size = 100;
 const gap = 15;
 
 const fadeInAnimationVariants = {
@@ -37,53 +37,56 @@ const Skills = () => {
     return (
         <>
             <PageWrapper>
-                <div className="flex sm:flex-row flex-col-reverse min-h-screen items-center justify-around p-2" id="skills">
-                    <Image src={avatar} alt='ai-avatar' width={300} height={425} className='rounded-full hidden sm:none md:none lg:block' />
-                    <motion.div
-                        animate={{ "--base-hue": 360 } as any}
-                        initial={{ "--base-hue": 0 } as any}
-                        exit={{ "--base-hue": 0 } as any}
-                        transition={{ duration: 100, loop: Infinity, ease: "linear" }}
-                        className="h-screen"
-                    >
+                <div className="flex flex-col min-h-screen w-full items-center justify-center p-2 gap-12" id="skills">
+                    {/* <div className="w-full text-center mt-10"><h1 className="text-4xl">Skills</h1></div> */}
+                    <div className="flex sm:flex-row flex-col-reverse w-full items-center justify-around">
+                        <Image src={avatar} alt='ai-avatar' width={300} height={425} className='rounded-full hidden sm:none md:none lg:block' />
                         <motion.div
-                            style={{
-                                display: "flex",
-                                width: (size + gap) * 4 - gap,
-                                height: (size + gap) * 4 - gap,
-                                top: "50%",
-                                left: "50%",
-                                transform: "translate(-50%, -50%)",
-                                position: "relative",
-                                perspective: 500
-                            }}
+                            animate={{ "--base-hue": 360 } as any}
+                            initial={{ "--base-hue": 0 } as any}
+                            exit={{ "--base-hue": 0 } as any}
+                            transition={{ duration: 100, loop: Infinity, ease: "linear" }}
+                            className="h-52"
                         >
-                            {grid.map((row, rowIndex) =>
-                                row.map((skill, colIndex) => (
-                                    <motion.div
-                                        key={colIndex}
-                                        variants={fadeInAnimationVariants}
-                                        initial="initial"
-                                        whileInView="animate"
-                                        viewport={{
-                                            once: true,
-                                        }}
-                                        custom={colIndex}
-                                    >
-                                        <SkillsGrid
-                                            x={x}
-                                            y={y}
-                                            active={active}
-                                            setActive={setActive}
-                                            rowIndex={rowIndex}
-                                            colIndex={colIndex}
-                                            key={rowIndex + colIndex}
-                                            skill={skill}
-                                        /></motion.div>
-                                ))
-                            )}
+                            <motion.div
+                                style={{
+                                    display: "flex",
+                                    width: (size + gap) * 4 - gap,
+                                    height: (size + gap) * 4 - gap,
+                                    top: "50%",
+                                    left: "50%",
+                                    transform: "translate(-50%, -50%)",
+                                    position: "relative",
+                                    perspective: 500
+                                }}
+                            >
+                                {grid.map((row, rowIndex) =>
+                                    row.map((skill, colIndex) => (
+                                        <motion.div
+                                            key={colIndex}
+                                            variants={fadeInAnimationVariants}
+                                            initial="initial"
+                                            whileInView="animate"
+                                            viewport={{
+                                                once: true,
+                                            }}
+                                            custom={colIndex}
+                                        >
+                                            <SkillsGrid
+                                                x={x}
+                                                y={y}
+                                                active={active}
+                                                setActive={setActive}
+                                                rowIndex={rowIndex}
+                                                colIndex={colIndex}
+                                                key={rowIndex + colIndex}
+                                                skill={skill}
+                                            /></motion.div>
+                                    ))
+                                )}
+                            </motion.div>
                         </motion.div>
-                    </motion.div>
+                    </div>
                 </div>
             </PageWrapper>
         </>

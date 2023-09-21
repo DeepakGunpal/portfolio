@@ -1,0 +1,38 @@
+
+#progress {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  transform: rotate(-90deg);
+}
+
+circle {
+  stroke-dashoffset: 0;
+  stroke-width: 15%;
+  fill: none;
+}
+
+.bg {
+  stroke: grey;
+  opacity: 0.3;
+}
+
+#progress .indicator {
+  stroke: rgb(33, 34, 37);
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: #fff3;
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: #fff3;
+}

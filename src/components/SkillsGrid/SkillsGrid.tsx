@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MotionValue, motion, useSpring } from "framer-motion";
 import { distance } from "@popmotion/popcorn";
 
-const size = 120;
+const size = 100;
 const gap = 15;
 
 type props = {

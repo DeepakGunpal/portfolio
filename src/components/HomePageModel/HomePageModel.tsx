@@ -1,6 +1,6 @@
 "use client"
 import { Suspense, lazy, useState } from 'react';
-import Hi from "@/assets/LottieJSON/hi.json"
+import relaxingPuppy from "@/assets/LottieJSON/relaxingPuppy.json"
 import LottieAnimation from '../LottieAnimation/LottieAnimation';
 const Spline = lazy(() => import('@splinetool/react-spline'));
 
@@ -17,7 +17,7 @@ export default function HomePageModel() {
           style={{ display: splineLoaded ? "block" : "none" }}
         />
       </Suspense>
-      {!splineLoaded && <LottieAnimation animation={Hi} />}
+      {!splineLoaded && <LottieAnimation animation={relaxingPuppy} />}
     </div>
   );
 }

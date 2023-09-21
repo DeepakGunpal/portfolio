@@ -6,7 +6,9 @@ import Skills from '@/container/Skills/Skills'
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-br from-pink-300 via-transparent to-blue-300">
+    <main
+      className="bg-gradient-to-b from-gray-300 to-white"
+    >
       <HomePage />
       <Skills />
       <Experience />
