@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -13,6 +12,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useForm } from "react-hook-form"
+import emailjs from "emailjs-com";
 
 const formSchema = z.object({
     name: z.string().min(2, {
@@ -25,6 +25,34 @@ const formSchema = z.object({
         message: "Username must be at least 2 characters.",
     }),
 })
+
+type valuesObj = {
+    name: string, email: string, message: string, [key: string]: string
+}
+
+function objectToForm(obj: valuesObj) {
+    // Create a new form element
+    const form = document.createElement('form');
+
+    // Loop through the properties of the object
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            // Create an input element for each property
+            const input = document.createElement('input');
+
+            // Set the name attribute to the property name
+            input.setAttribute('name', key);
+
+            // Set the value attribute to the property value
+            input.setAttribute('value', obj[key]);
+
+            // Append the input element to the form
+            form.appendChild(input);
+        }
+    }
+
+    return form;
+}
 
 const ContactForm = () => {
     // 1. Define your form.
@@ -39,9 +67,14 @@ const ContactForm = () => {
 
     // 2. Define a submit handler.
     function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values)
+        const htmlFormElement = objectToForm(values)
+        emailjs.sendForm(
+            "service_1zbwnx3",
+            "template_x63wtrb",
+            htmlFormElement,
+            "GnKZnK58WI7DqNaLd"
+        );
+        form.reset()
     }
 
     return (
@@ -70,9 +103,6 @@ const ContactForm = () => {
                                 <FormControl>
                                     <Input placeholder="Enter your email" {...field} className="border-black" />
                                 </FormControl>
-                                {/* <FormDescription>
-                                This is your public display name.
-                            </FormDescription> */}
                                 <FormMessage />
                             </FormItem>
                         )}

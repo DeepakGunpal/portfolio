@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { MotionValue, motion, useSpring } from "framer-motion";
 import { distance } from "@popmotion/popcorn";
 
@@ -19,9 +19,6 @@ type props = {
 }
 
 const SkillsGrid = ({ active, setActive, colIndex, rowIndex, x, y, skill }: props) => {
-    const [isHovered, setIsHovered] = useState(false);
-    const handleHover = () => setIsHovered(true);
-    const handleHoverExit = () => setIsHovered(false);
     const isDragging = colIndex === active.col && rowIndex === active.row;
     const diagonalIndex = (360 / 6) * (colIndex + rowIndex);
     const d = distance(
@@ -41,8 +38,12 @@ const SkillsGrid = ({ active, setActive, colIndex, rowIndex, x, y, skill }: prop
             dragTransition={{ bounceStiffness: 500, bounceDamping: 20 }}
             dragElastic={1}
             onDragStart={() => setActive({ row: rowIndex, col: colIndex })}
-            onHoverStart={handleHover}
-            onHoverEnd={handleHoverExit}
+            whileHover={{
+                scale: 1.1,
+                textShadow: "0px 0px 4px gray"
+            }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
             style={{
                 color: "black",
                 width: size,
@@ -55,7 +56,6 @@ const SkillsGrid = ({ active, setActive, colIndex, rowIndex, x, y, skill }: prop
                 y: isDragging ? y : dy,
                 zIndex: isDragging ? 1 : 0,
                 wordWrap: "break-word",
-                scale: isHovered ? 1.1 : 1, // Scale when hovered
             }}
             className="flex items-center justify-center p-8 text-center bg-gradient-to-br from-pink-300 via-violet-400 to-blue-300"
         >{skill}</motion.div>

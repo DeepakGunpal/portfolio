@@ -3,9 +3,9 @@ import * as React from "react";
 import { useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import SkillsGrid from "@/components/SkillsGrid/SkillsGrid";
-import avatar from "@/assets/2.jpg"
-import Image from "next/image";
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
+import developer from "@/assets/LottieJSON/developer.json"
+import LottieAnimation from "@/components/LottieAnimation/LottieAnimation";
 
 const grid = [
     ["TypeScript", "Nextjs 13", "Prompt Engg.", "JavaScript"],
@@ -37,10 +37,9 @@ const Skills = () => {
     return (
         <>
             <PageWrapper>
-                <div className="flex flex-col min-h-screen w-full items-center justify-center p-2 gap-12" id="skills">
-                    {/* <div className="w-full text-center mt-10"><h1 className="text-4xl">Skills</h1></div> */}
+                <div className="flex flex-col min-h-screen w-full items-center justify-center p-2 gap-2" id="skills">
+                    <h1 className="font-bold text-3xl tracking-wide">Skills</h1>
                     <div className="flex sm:flex-row flex-col-reverse w-full items-center justify-around">
-                        <Image src={avatar} alt='ai-avatar' width={300} height={425} className='rounded-full hidden sm:none md:none lg:block' />
                         <motion.div
                             animate={{ "--base-hue": 360 } as any}
                             initial={{ "--base-hue": 0 } as any}
@@ -86,6 +85,7 @@ const Skills = () => {
                                 )}
                             </motion.div>
                         </motion.div>
+                        <LottieAnimation animation={developer} width={"600px"} height={"500px"} />
                     </div>
                 </div>
             </PageWrapper>

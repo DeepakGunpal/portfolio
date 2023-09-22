@@ -1,5 +1,6 @@
 import Contact from '@/container/Contact/Contact'
 import Experience from '@/container/Experience/Experience'
+import Footer from '@/container/Footer/Footer'
 import HomePage from '@/container/HomePage/HomePage'
 import Projects from '@/container/Projects/Projects'
 import Skills from '@/container/Skills/Skills'
@@ -12,8 +13,9 @@ export default function Home() {
       <HomePage />
       <Skills />
       <Experience />
-      <Projects />
+      {/* <Projects /> */}
       <Contact />
+      <Footer />
     </main>
   )
 }

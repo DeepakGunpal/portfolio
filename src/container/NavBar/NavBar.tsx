@@ -1,29 +1,30 @@
 "use client"
 import Link from 'next/link';
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useSnapshot } from 'valtio';
+import state from '@/valtio/store';
 
 let tabs = [
     { id: "/", label: "Home" },
     { id: "#skills", label: "Skills" },
     { id: "#experience", label: "Experience" },
-    { id: "#projects", label: "Projects" },
+    // { id: "#projects", label: "Projects" },
     { id: "#contact", label: "Contact" },
 ];
 
 const Navar = () => {
-    let [activeTab, setActiveTab] = useState(tabs[0].id);
+    let snap = useSnapshot(state)
+    const { activeTab } = snap
 
     return (
-        <nav className="fixed top-5 left-1/4 w-1/2 bg-white bg-opacity-50 backdrop-blur-md p-4 rounded-full z-50">
-            <div className="container mx-auto flex space-x-1 justify-center">
+        <nav className="fixed top-5 left-1/3 w-1/3 bg-white bg-opacity-50 backdrop-blur-md p-3 rounded-full z-50">
+            <div className="container mx-auto flex space-x-1 justify-center flex-wrap">
                 {tabs.map((tab) => (
                     <Link
                         href={`${tab.id}`}
                         key={tab.id}
-                        onClick={() => setActiveTab(tab.id)}
-                        className={`${activeTab === tab.id ? "" : "hover:text-sky-600"
-                            } relative rounded-full px-3 py-1.5 text-sm font-medium text-black outline-sky-400 transition focus-visible:outline-2`}
+                        onClick={() => state.activeTab = tab.id}
+                        className={`relative rounded-full px-3 text-md font-medium text-black outline-none transition focus-visible:outline-2`}
                         style={{
                             WebkitTapHighlightColor: "transparent",
                         }}
