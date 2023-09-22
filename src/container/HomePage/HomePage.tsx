@@ -3,7 +3,7 @@ import avatar from "@/assets/3.jpg"
 import Image from 'next/image'
 import { useTypewriter } from 'react-simple-typewriter'
 import LottieAnimation from '@/components/LottieAnimation/LottieAnimation'
-import Hi from "@/assets/LottieJSON/Hi.json"
+import Hi from "@/assets/LottieJSON/hi.json"
 import SocialLinks from '@/components/SocialLinks/SocialLinks'
 import CTA from "@/components/CTA/CTA"
 
