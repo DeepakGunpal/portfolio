@@ -16,7 +16,7 @@ export default function HomePage() {
         delaySpeed: 1000
     })
     return (
-        <div className="flex flex-col sm:flex-row min-h-screen w-full items-center justify-evenly p-2 pt-30" id="#">
+        <div className="flex flex-col sm:flex-row min-h-screen w-full items-center justify-evenly p-2" id="#">
             <div className='flex w-1/3 flex-col gap-6 p-2 justify-center h-full'>
                 <LottieAnimation animation={Hi} />
                 <div className='w-full h-14 flex flex-row gap-2 p-2 rounded-2xl px-12'>

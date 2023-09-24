@@ -4,7 +4,8 @@ Framer motion use cases:
 - Projects: https://www.framer.com/motion/use-scroll/##element-scroll
 - Page Scroll: https://www.framer.com/motion/scroll-function/#examples
 - Switch Theme: https://www.framer.com/motion/scroll-function/#examples
-- Know more/ contact me/ signIn etc: https://www.framer.com/motion/scroll-function/#examples
+- Know more/ contact me/ signIn etc: https://www.framer.com/motion/layout-animations/##scale-correction
+- carousel: https://www.framer.com/motion/animate-presence/#usage
 
 framer motion guide: 
 - https://github.com/isNan909/next13-page-transition/blob/main/app/products/page.jsx

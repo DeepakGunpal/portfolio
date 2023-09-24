@@ -38,7 +38,7 @@ const Skills = () => {
         <>
             <PageWrapper>
                 <div className="flex flex-col min-h-screen w-full items-center justify-center p-2 gap-2" id="skills">
-                    <h1 className="font-bold text-3xl tracking-wide">Skills</h1>
+                    <h1 className="font-bold text-3xl tracking-wide mt-16">Skills</h1>
                     <div className="flex sm:flex-row flex-col-reverse w-full items-center justify-around">
                         <motion.div
                             animate={{ "--base-hue": 360 } as any}
