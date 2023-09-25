@@ -1,0 +1,55 @@
+.carousel-item {
+  flex: 0 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item.active {
+  transform: translateX(0);
+}
+
+.project_tabs > ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+ul {
+  display: flex;
+  width: 100%;
+}
+
+li {
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+  padding: 10px 15px;
+  position: relative;
+  background: white;
+  cursor: pointer;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  user-select: none;
+}
+
+.underline {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #8855ff;
+}
+
+li.selected {
+  background: #eee;
+}

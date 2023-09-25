@@ -1,7 +1,7 @@
 "use client"
 import PageWrapper from '@/components/PageWrapper/PageWrapper'
 import React, { useState } from 'react'
-import Projects from '@/components/Projects/Projects'
+import Projects from '@/container/Projects/Projects'
 
 const Experience = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);

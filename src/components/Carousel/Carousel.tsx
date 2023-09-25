@@ -28,7 +28,7 @@ const variants = {
     }
 };
 
-const items = [<LottieAnimation key={0} animation={underConstructionAnimation} />, <LottieAnimation key={1} animation={underConstructionAnimation} />]
+const items = ["2023", "2022"]
 
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset: number, velocity: number) => {
@@ -71,7 +71,9 @@ const Carousel = () => {
                         }
                     }}
                     className="flex flex-col items-center justify-center text-4xl"
-                >{items[itemIndex]}</motion.div>
+                >
+                    <div>{items[itemIndex]}</div>
+                </motion.div>
             </AnimatePresence>
             <motion.div
                 whileHover={{

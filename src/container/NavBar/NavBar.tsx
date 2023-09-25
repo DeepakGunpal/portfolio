@@ -16,7 +16,7 @@ let tabs = [
     { id: "#skills", icon: <SkillIcon />, label: "Skill" },
     { id: "#experience", icon: <ExperienceIcon />, label: "Experience" },
     // { id: "#projects", icon: "Projects" },
-    { id: "#contact", icon: <ContactIcon />, label: "Chat" },
+    { id: "#contact", icon: <ContactIcon />, label: "Contact" },
 ];
 
 const Navar = () => {
