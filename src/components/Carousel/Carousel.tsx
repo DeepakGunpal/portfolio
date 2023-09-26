@@ -4,8 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import "./Carousel.css";
 import { TriangleLeftIcon, TriangleRightIcon } from "@/Svgs/Svgs";
-import LottieAnimation from "../LottieAnimation/LottieAnimation";
-import underConstructionAnimation from "@/assets/LottieJSON/underConstructionAnimation.json"
+import { Project } from "../../../types";
+import Link from "next/link";
+import { Url } from "next/dist/shared/lib/router/router";
+import Image from "next/image";
+import { Button } from "../ui/button";
 
 const variants = {
     enter: (direction: number) => {
@@ -28,18 +31,23 @@ const variants = {
     }
 };
 
-const items = ["2023", "2022"]
 
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset: number, velocity: number) => {
     return Math.abs(offset) * velocity;
 };
 
-const Carousel = () => {
+interface CarouselProps {
+    projects: Project[];
+    isOpen: boolean,
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const Carousel = ({ projects, isOpen, setIsOpen }: CarouselProps) => {
     const [[page, direction], setPage] = useState([0, 0]);
 
-    const itemIndex = wrap(0, items.length, page);
-
+    const projectIndex = wrap(0, projects.length, page);
+    const project = projects[projectIndex];
     const paginate = (newDirection: number) => {
         setPage([page + newDirection, newDirection]);
     };
@@ -59,7 +67,7 @@ const Carousel = () => {
                         opacity: { duration: 0.2 }
                     }}
                     drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
+                    dragConstraints={{ left: 0, right: 0, bottom: 0, top: 2 }}
                     dragElastic={1}
                     onDragEnd={(e, { offset, velocity }) => {
                         const swipe = swipePower(offset.x, velocity.x);
@@ -70,9 +78,24 @@ const Carousel = () => {
                             paginate(-1);
                         }
                     }}
-                    className="flex flex-col items-center justify-center text-4xl"
+                    className="text-md w-4/5"
                 >
-                    <div>{items[itemIndex]}</div>
+                    <div className={`flex gap-4 h-4/5 ${isOpen ? "flex-row" : "flex-col"}`}>
+                        <Image src={project?.img} alt={"project image"} width={250} height={350} className="rounded-md object-cover" />
+                        <div className="flex flex-col gap-2">
+                            <h2>{project?.title}</h2>
+                            <p>Context: {project?.context}</p>
+                            <span className="flex gap-4">
+                                {isOpen && <p>{project?.description}</p>}
+                                {project.github && <Link href={project.github as Url} target="_blank" rel="noreferrer">
+                                    <Button>GitHub</Button>
+                                </Link>}
+                                {project.link && <Link href={project.link as Url} target="_blank" rel="noreferrer">
+                                    <Button>Live</Button>
+                                </Link>}
+                            </span>
+                        </div>
+                    </div>
                 </motion.div>
             </AnimatePresence>
             <motion.div

@@ -9,7 +9,7 @@ const Experience = () => {
     return (
         <PageWrapper>
             <div className='h-screen w-screen flex flex-col justify-center gap-8' id="experience">
-                <div className='flex justify-center mt-16'><h1 className='font-bold text-3xl tracking-wide'>Experience</h1></div>
+                <div className='flex justify-center mt-16'><h1 className='font-bold text-3xl tracking-wide'>{isOpen ? "Projects" : "Experience"}</h1></div>
                 <div className={`flex sm:flex-row flex-col-reverse h-3/5 items-center ${isOpen ? "justify-center" : "justify-around"} p-2 gap-6`}>
                     <div className={`card w-1/3 h-full flex flex-col gap-4 p-8 overflow-y-scroll ${isOpen ? "hidden" : ""}`}>
                         <div>
@@ -28,7 +28,7 @@ const Experience = () => {
                             <p className='text-lg ml-4'>Tech : JavaScript, React, Redux, Nodejs, Express, MongoDb, HTML, CSS, AWS S3</p>
                         </div>
                     </div>
-                    <Projects items={["item1", "item2"]} isOpen={isOpen} setIsOpen={setIsOpen} />
+                    <Projects isOpen={isOpen} setIsOpen={setIsOpen} />
                 </div>
             </div>
         </PageWrapper>
