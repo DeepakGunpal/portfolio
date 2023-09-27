@@ -7,7 +7,7 @@ import LottieAnimation from '@/components/LottieAnimation/LottieAnimation';
 const NotFound = () => {
     return (
         <div className='min-h-screen flex items-center w-full justify-center'>
-            <LottieAnimation animation={notFound} />
+            <LottieAnimation animation={notFound} animationName={"notFound"} />
         </div>
     )
 }

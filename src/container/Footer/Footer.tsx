@@ -6,7 +6,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className="flex flex-col h-fit items-center justify-around p-2 gap-4" id="footer">
+        <div className="flex flex-col h-fit items-center w-screen justify-around p-2 gap-4" id="footer">
             <motion.div
                 className='text-3xl font-bold text-transparent bg-clip-text bg-black cursor-pointer' whileHover={{
                     scale: 1.1,

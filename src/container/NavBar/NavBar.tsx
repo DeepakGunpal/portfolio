@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { motion } from "framer-motion";
 import { useSnapshot } from 'valtio';
 import state from '@/valtio/store';
-import { ContactIcon, ExperienceIcon, HomeIcon, SkillIcon } from '@/Svgs/Svgs';
+import { ContactIcon, ExperienceIcon, HomeIcon, ProjectsIcon, SkillIcon } from '@/Svgs/Svgs';
 import {
     Tooltip,
     TooltipContent,
@@ -14,8 +14,8 @@ import {
 let tabs = [
     { id: "/", icon: <HomeIcon />, label: "Home" },
     { id: "#skills", icon: <SkillIcon />, label: "Skill" },
-    { id: "#experience", icon: <ExperienceIcon />, label: "Experience" },
-    // { id: "#projects", icon: "Projects" },
+    { id: "#aboutme", icon: <ExperienceIcon />, label: "About me" },
+    { id: "#projects", icon: <ProjectsIcon />, label: "Projects" },
     { id: "#contact", icon: <ContactIcon />, label: "Contact" },
 ];
 
@@ -24,8 +24,8 @@ const Navar = () => {
     const { activeTab } = snap
 
     return (
-        <nav className="fixed top-5 w-full">
-            <div className="container mx-auto flex space-x-1 justify-center items-center flex-wrap w-1/5 bg-white bg-opacity-50 backdrop-blur-md p-2 rounded-full z-50 gap-2">
+        <nav className="fixed top-5 w-screen">
+            <div className="container mx-auto flex space-x-1 justify-center items-center flex-wrap w-fit lg:w-1/5 md:w-2/5 sm:w-1/5  bg-white bg-opacity-50 backdrop-blur-md p-2 rounded-full z-50 gap-2">
                 {tabs.map((tab) => (
                     <div key={tab.id} className={`relative rounded-full p-2 text-black outline-none transition focus-visible:outline-2`}>
                         <TooltipProvider>
