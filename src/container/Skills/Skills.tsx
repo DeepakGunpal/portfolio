@@ -53,7 +53,7 @@ const Skills = () => {
                 <div className="flex flex-col min-h-screen w-screen items-center justify-center p-2 gap-2" id="skills">
                     <h1 className="font-bold text-3xl tracking-wide mt-16">Skills</h1>
                     <motion.div
-                        className="flex flex-col-reverse sm:flex-row w-full items-center justify-around gap-4"
+                        className="flex flex-col-reverse md:flex-col-reverse lg:flex-row w-full items-center justify-around gap-4"
                     >
                         <motion.div
                             style={{

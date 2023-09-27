@@ -2,16 +2,18 @@ import portfolio from "@/assets/project_imgs/portfolio.png";
 import racwood from "@/assets/project_imgs/racwood.png";
 import marketingnet from "@/assets/project_imgs/marketingnet.png";
 import madailab from "@/assets/project_imgs/madailab.png";
-import proctoringnet from "@/assets/project_imgs/proctoringnet.webp";
+import proctoringnet from "@/assets/project_imgs/proctoringnet.png";
 import chatSearchNSave from "@/assets/project_imgs/chatSearchNSave.png";
 import dictionary1 from "@/assets/project_imgs/dictionary1.png";
-import allinone from "@/assets/project_imgs/allinone.png";
+import allinone from "@/assets/project_imgs/ideogram_allinone.png";
 import { Projects } from "../../types";
+import { nanoid } from "nanoid";
 
 export const projects: Projects = {
   2023: [
     {
-      title: "Personal Portfolio",
+      id: nanoid(),
+      title: "My Portfolio",
       img: portfolio,
       description:
         "Explore my showcase of diverse web projects, encompassing front-end and back-end development. This portfolio not only reflects my technical skills but also highlights my passion for creating innovative and user-centric web solutions. Discover a collection of web applications, websites, and more that demonstrate my dedication to crafting seamless digital experiences.",
@@ -29,6 +31,7 @@ export const projects: Projects = {
       status: "Completed",
     },
     {
+      id: nanoid(),
       title: "Racwood.com - Art and Craft Handicraft Furniture Website",
       img: racwood,
       description:
@@ -52,6 +55,7 @@ export const projects: Projects = {
       status: "Work In Progress",
     },
     {
+      id: nanoid(),
       title: "MAd Ai Lab - Marketing Advertising AI Lab",
       img: madailab,
       description:
@@ -76,7 +80,8 @@ export const projects: Projects = {
       status: "Work In Progress",
     },
     {
-      title: "Chat SearchNSave",
+      id: nanoid(),
+      title: "Chat SearchNSave - Chrome Extension For ChatGpt",
       img: chatSearchNSave,
       description:
         "Manage and organize your ChatGPT conversations effortlessly with the Chat Search and Save Chrome extension. Auto-save, advanced search, and seamless navigation make it a must-have tool for enhanced productivity.",
@@ -94,6 +99,7 @@ export const projects: Projects = {
       status: "Completed",
     },
     {
+      id: nanoid(),
       title: "MarketingNet.com - Get Better At Marketing",
       img: marketingnet,
       description:
@@ -118,7 +124,8 @@ export const projects: Projects = {
       status: "Work In Progress",
     },
     {
-      title: "ProctoringNet",
+      id: nanoid(),
+      title: "ProctoringNet - Online Interview Test Platform",
       img: proctoringnet,
       description:
         "ProctoringNet is a cutting-edge Online Interview Test Platform that streamlines the interview process. It offers advanced proctoring features, admin tools for candidate evaluation, and a seamless experience for both candidates and interviewers.",
@@ -143,6 +150,7 @@ export const projects: Projects = {
   ],
   2022: [
     {
+      id: nanoid(),
       title: "All In One",
       img: allinone,
       description:
@@ -176,6 +184,7 @@ export const projects: Projects = {
       status: "Completed",
     },
     {
+      id: nanoid(),
       title: "Dictionary",
       img: dictionary1,
       description:

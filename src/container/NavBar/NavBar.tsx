@@ -24,7 +24,7 @@ const Navar = () => {
     const { activeTab } = snap
 
     return (
-        <nav className="fixed top-5 w-screen">
+        <nav className="fixed top-5 w-screen z-50">
             <div className="container mx-auto flex space-x-1 justify-center items-center flex-wrap w-fit lg:w-1/5 md:w-2/5 sm:w-1/5  bg-white bg-opacity-50 backdrop-blur-md p-2 rounded-full z-50 gap-2">
                 {tabs.map((tab) => (
                     <div key={tab.id} className={`relative rounded-full p-2 text-black outline-none transition focus-visible:outline-2`}>
