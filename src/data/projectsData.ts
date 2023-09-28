@@ -157,16 +157,16 @@ export const projects: Projects = {
         "All In One platform - your ultimate destination for local shopping convenience. Whether you're a vendor looking to expand your reach, a customer in search of nearby shops, a delivery rider seeking opportunities, or an admin in need of insightful business data, we've got you covered. With vendor registration, order tracking, wallet payments, and robust admin tools, we bring local commerce to your fingertips.",
       contributions: [
         `As a developer for 'All In One,' I have built the complete backend for this project. My key contributions include:`,
-        `**Vendor Module:**
+        `Vendor Module:
         - Designed and implemented the vendor registration system, enabling seamless onboarding for sellers.
         - Developed the admin dashboard for order tracking and comprehensive performance metrics.`,
-        `**Customer Module:**
+        `Customer Module:
         - Created the location-based vendor finder, simplifying the shopping experience for customers.
         - Integrated a secure wallet system, allowing customers to recharge and make hassle-free in-app payments.
         - Implemented order tracking functionality, keeping customers informed about their deliveries.`,
-        `**Rider Module:**
+        `Rider Module:
         - Established a rider registration feature, opening up earning opportunities for delivery personnel.`,
-        `**Admin Module:**
+        `Admin Module:
         - Developed the admin panel for efficient vendor management and analysis.
         - Implemented order and payment tracking with date filtering for data-driven decision-making.`,
       ],
@@ -181,7 +181,7 @@ export const projects: Projects = {
         "Digital Ocean",
       ],
       context: "Freelancer",
-      status: "Completed",
+      status: "Delivered",
     },
     {
       id: nanoid(),
