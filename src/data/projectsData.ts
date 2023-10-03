@@ -18,7 +18,7 @@ export const projects: Projects = {
       description:
         "Explore my showcase of diverse web projects, encompassing front-end and back-end development. This portfolio not only reflects my technical skills but also highlights my passion for creating innovative and user-centric web solutions. Discover a collection of web applications, websites, and more that demonstrate my dedication to crafting seamless digital experiences.",
       github: new URL("https://github.com/DeepakGunpal/portfolio"),
-      link: new URL("https://portfolio-nine-henna-14.vercel.app/"),
+      link: new URL("https://portfolio-deepakgunpal.vercel.app/"),
       tech: [
         "Nextjs 13",
         "TypeScript",
