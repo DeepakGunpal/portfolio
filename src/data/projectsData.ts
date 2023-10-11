@@ -28,7 +28,7 @@ export const projects: Projects = {
         "valtio",
       ],
       context: "Personal",
-      status: "Completed",
+      status: "Live",
     },
     {
       id: nanoid(),
@@ -96,7 +96,7 @@ export const projects: Projects = {
       ),
       tech: ["HTML", "CSS", "JavaScript", "Chrome APIs", "Bootstrap"],
       context: "MentorStudents.org",
-      status: "Completed",
+      status: "Live",
     },
     {
       id: nanoid(),
@@ -201,7 +201,7 @@ export const projects: Projects = {
         "Oxford Dictionaries Apis",
       ],
       context: "Personal",
-      status: "Completed",
+      status: "Live",
     },
   ],
 };
